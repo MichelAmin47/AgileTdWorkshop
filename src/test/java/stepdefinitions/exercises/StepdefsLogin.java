@@ -61,6 +61,7 @@ public class StepdefsLogin {
         Assert.assertEquals("Account text is not visible", "Your account", myAccountPage.getMyAccountHeader());
     }
 
+    //Todo remove lines from stepdefs
     @When("The user logs into his MyAccount")
     public void theUserLogsIntoHisMyAccount() {
         homePage = new HomePage(driver);
