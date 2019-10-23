@@ -8,6 +8,7 @@ public class AddressPage {
 
     private WebDriver driver;
 
+    By newAddressHeader = By.cssSelector("header.page-header h1");
     By aliasField = By.cssSelector("input[name='alias']");
     By firstNameField = By.cssSelector("input[name='firstname']");
     By lastNameField = By.cssSelector("input[name='lastname']");
@@ -31,6 +32,11 @@ public class AddressPage {
 
     public AddressPage(WebDriver driver){
         this.driver = driver;
+    }
+
+    public void validateAddressPage() {
+        Assert.assertEquals("Add new address page is not shown", "New address",
+                driver.findElement(newAddressHeader).getText());
     }
 
     public void fillInAlias(String alias){
@@ -76,11 +82,14 @@ public class AddressPage {
 
     public void clickSaveButton() {
         driver.findElement(saveButton).click();
+    }
+
+    public void validateNewAddressSaveMessage(){
         Assert.assertEquals("Address was not saved succesfully", "Address successfully added!",
                 driver.findElement(successMessage).getText());
     }
 
-    public void checkNewlyAddedAddress() {
+    public void validateNewlyAddedAddress() {
         Assert.assertTrue("Check if address block is visible", driver.findElement(addressBlock).isDisplayed());
         Assert.assertEquals("Address alias not present", addressAliasForValidation,
                 driver.findElement(addressAlias).getText());
@@ -89,10 +98,15 @@ public class AddressPage {
     public void deleteNewlyAddress(){
         Assert.assertTrue("Check if delete address is visible", driver.findElement(deleteAddressButton).isDisplayed());
         driver.findElement(deleteAddressButton).click();
+    }
+
+    public void validateDeletedAddress() {
         Assert.assertEquals("Address was not deleted succesfully", "Address successfully deleted!",
                 driver.findElement(successMessage).getText());
         driver.findElement(backToAccount).click();
+    }
 
+    public void validateNoAddressAccountPage() {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         Assert.assertTrue("Check if delete address is visible", driver.findElement(myAccountPage.myAccountElement).isDisplayed());
     }

@@ -23,6 +23,11 @@ public class StepDefAddress {
         myAccountPage.clickToAddFirstAddres();
     }
 
+    @And("checks for the new address page")
+    public void checksForTheNewAddressPage() {
+        addressPage.validateAddressPage();
+    }
+
     @And("fills in Alias \"([^\"]*)\"")
     public void fillsInAlias(String alias) {
         addressPage.fillInAlias(alias);
@@ -82,13 +87,28 @@ public class StepDefAddress {
         addressPage.clickSaveButton();
     }
 
+    @And("checks for the new address save message")
+    public void checksForTheNewAddressSaveMessage() {
+        addressPage.validateNewAddressSaveMessage();
+    }
+
     @Then("The address is on the address page")
     public void theAdressIsOnTheAdressPage() {
-        addressPage.checkNewlyAddedAddress();
+        addressPage.validateNewlyAddedAddress();
     }
 
     @And("delete the address")
     public void deleteTheAdress() {
         addressPage.deleteNewlyAddress();
+    }
+
+    @And("checks for deleted address message")
+    public void checksForDeletedAddressMessage() {
+        addressPage.validateDeletedAddress();
+    }
+
+    @And("checks for no address on MyAccount page")
+    public void checksForNoAddressOnMyAccountPage() {
+        addressPage.validateNoAddressAccountPage();
     }
 }
