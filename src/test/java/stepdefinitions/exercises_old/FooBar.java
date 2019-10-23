@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.exercises_old;
 
 import cucumber.api.PendingException;
 import io.cucumber.java.en.Given;

@@ -5,12 +5,11 @@ import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DriverManager {
 
-
-    protected static WebDriver driver;
+    //TODO change back to protected
+    public static WebDriver driver;
 
     @Before
     public static void setupClass(){

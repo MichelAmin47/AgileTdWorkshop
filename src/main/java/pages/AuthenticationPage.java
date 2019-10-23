@@ -13,15 +13,16 @@ import java.util.List;
 public class AuthenticationPage{
     private WebDriver driver;
 
-    @FindBy(css = "input#email")
+    @FindBy(css = "form#login-form input[type='email'] ")
     private WebElement emailTextfield;
 
-    @FindBy(css = "input#passwd")
+    @FindBy(css = "form#login-form input[type='password'] ")
     private WebElement passwordTextfield;
 
-    @FindBy(css = "button#SubmitLogin")
+    @FindBy(css = "form#login-form button[type='submit'] ")
     private WebElement loginButton;
 
+    //-----old------
     @FindBy(css = ".form-group.form-error #email")
     private WebElement invalidEmail;
 
@@ -37,6 +38,18 @@ public class AuthenticationPage{
 
       // This call sets the WebElement fields.
       PageFactory.initElements(driver, this);
+    }
+
+    public void fillInEmail(String email){
+        emailTextfield.sendKeys(email);
+    }
+
+    public void fillInPassword(String password){
+        passwordTextfield.sendKeys(password);
+    }
+
+    public void clickSubmitButton(){
+        loginButton.click();
     }
 
     public void setNewUserMail(String mail){

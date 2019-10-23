@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.exercises_old;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

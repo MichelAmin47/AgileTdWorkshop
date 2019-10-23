@@ -1,4 +1,4 @@
-package stepdefinitions.exercises;
+package stepdefinitions.exercises_old;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
+import stepdefinitions.exercises.DriverManager;
 
 import java.util.ArrayList;
 import java.util.List;
