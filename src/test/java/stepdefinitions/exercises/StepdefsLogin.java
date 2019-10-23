@@ -75,6 +75,5 @@ public class StepdefsLogin {
         homePage = new HomePage(driver);
         homePage.clickLogIn();
         authenticationPage.login(email,password);
-
     }
 }

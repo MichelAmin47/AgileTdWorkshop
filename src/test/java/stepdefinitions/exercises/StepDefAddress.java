@@ -104,7 +104,7 @@ public class StepDefAddress {
 
     @And("checks for deleted address message")
     public void checksForDeletedAddressMessage() {
-        addressPage.validateDeletedAddress();
+        addressPage.validateDeletedAddressMessage();
     }
 
     @And("checks for no address on MyAccount page")

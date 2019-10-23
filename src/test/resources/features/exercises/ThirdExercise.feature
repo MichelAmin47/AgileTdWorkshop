@@ -21,4 +21,3 @@ Feature: As a user I want to add my first adress
     Then    The address is on the address page
     And     delete the address
     And     checks for deleted address message
-    And     checks for no address on MyAccount page

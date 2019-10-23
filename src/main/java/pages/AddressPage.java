@@ -3,6 +3,7 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class AddressPage {
 
@@ -100,14 +101,35 @@ public class AddressPage {
         driver.findElement(deleteAddressButton).click();
     }
 
-    public void validateDeletedAddress() {
+    public void validateDeletedAddressMessage() {
         Assert.assertEquals("Address was not deleted succesfully", "Address successfully deleted!",
                 driver.findElement(successMessage).getText());
-        driver.findElement(backToAccount).click();
     }
 
+    //TODO not implemented navigation in as well
     public void validateNoAddressAccountPage() {
+        driver.findElement(backToAccount).click();
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         Assert.assertTrue("Check if delete address is visible", driver.findElement(myAccountPage.myAccountElement).isDisplayed());
+    }
+
+    public WebElement getAddAddressElement() {
+        return driver.findElement(newAddressHeader);
+    }
+
+    public WebElement getNewAddressSavedMessageElement() {
+        return driver.findElement(successMessage);
+    }
+
+    public WebElement getNewlyAddedAddressElement() {
+        return driver.findElement(addressBlock);
+    }
+
+    public WebElement getNewAddressAliasElement() {
+        return driver.findElement(addressAlias);
+    }
+
+    public WebElement getAddressDeletedMessageElement() {
+        return driver.findElement(successMessage);
     }
 }
