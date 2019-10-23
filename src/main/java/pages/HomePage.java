@@ -13,11 +13,11 @@ public class HomePage {
 
     private WebDriver driver;
 
+    By logInButton = By.cssSelector("a[title*='Log']");
+
+    //---old-----
     @FindBy(css = "li#header_link_contact > a")
     private WebElement contactButton;
-
-    @FindBy(css = "[class='login']")
-    private WebElement logInButton;
 
     @FindBy(css = "[title='Home']")
     private WebElement homeButton;
@@ -35,7 +35,6 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-
         // This call sets the WebElement fields.
         PageFactory.initElements(driver, this);
     }
@@ -45,8 +44,7 @@ public class HomePage {
     }
 
     public void clickLogIn(){
-        logInButton.click();
-
+        driver.findElement(logInButton).click();
     }
 
     public void goToHomePage(){

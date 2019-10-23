@@ -7,10 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyAccountPage {
 
-    @FindBy(css = ".info-account")
-    private WebElement welcomeMessageElement;
-
-    @FindBy(css = ".page-heading")
+    @FindBy(css = "section#main h1")
     private WebElement myAccountElement;
 
 
@@ -24,7 +21,4 @@ public class MyAccountPage {
         return myAccountElement.getText();
     }
 
-    public String getWelcomeMessage(){
-      return welcomeMessageElement.getText();
-    }
 }

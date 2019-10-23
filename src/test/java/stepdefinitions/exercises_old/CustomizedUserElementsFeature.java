@@ -1,4 +1,4 @@
-package stepdefinitions.exercises;
+package stepdefinitions.exercises_old;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.AuthenticationPage;
 import pages.HomePage;
+import stepdefinitions.exercises.DriverManager;
 
 
 public class CustomizedUserElementsFeature {
