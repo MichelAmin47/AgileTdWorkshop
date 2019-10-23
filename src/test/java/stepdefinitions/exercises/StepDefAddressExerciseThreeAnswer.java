@@ -16,10 +16,13 @@ public class StepDefAddressExerciseThreeAnswer {
         this.driver = driverManager.driver;
         addressPage = new AddressPage(driver);
     }
+//  ANSWER FOR EXERCISE THREE - ASSERTIONS ARE DEEP
+
     @And("The user submits his first address")
     public void theUserSubmitsHisFirstAddress() {
         myAccountPage = new MyAccountPage(driver);
         myAccountPage.clickToAddFirstAddres();
+        addressPage.validateAddressPage();
 
         addressPage.fillInAlias("retseT");
         addressPage.fillInFirstName("Mister");
@@ -32,11 +35,14 @@ public class StepDefAddressExerciseThreeAnswer {
         addressPage.fillInCity("Testdam");
         addressPage.fillInPhoneNumber("0031123456");
         addressPage.clickSaveButton();
+        addressPage.validateNewAddressSaveMessage();
     }
 
     @Then("The new address should be show on the address page")
     public void theNewAddressShouldBeShowOnTheAddressPage() {
-        addressPage.checkNewlyAddedAddress();
+        addressPage.validateNewlyAddedAddress();
         addressPage.deleteNewlyAddress();
+        addressPage.validateDeletedAddress();
+        addressPage.validateNoAddressAccountPage();
     }
 }
