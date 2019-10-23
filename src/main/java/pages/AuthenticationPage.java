@@ -52,6 +52,12 @@ public class AuthenticationPage{
         loginButton.click();
     }
 
+    public void login(String email, String password) {
+        emailTextfield.sendKeys(email);
+        passwordTextfield.sendKeys(password);
+        loginButton.click();
+    }
+
     public void setNewUserMail(String mail){
         newUserMail.sendKeys(mail);
         newUserMail.sendKeys(Keys.TAB);
@@ -76,12 +82,6 @@ public class AuthenticationPage{
             Assert.assertTrue("The new user mail field cannot be found" , false);
             return false;
         }
-    }
-
-    public void login(String email, String password) {
-      emailTextfield.sendKeys(email);
-      passwordTextfield.sendKeys(password);
-      loginButton.click();
     }
 }
 
