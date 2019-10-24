@@ -60,23 +60,4 @@ public class HomePage {
        }
             return "account details button is not present on the page";
     }
-
-    public WebElement getTagsBlock(){
-        return tagContainer;
-    }
-
-    public List<WebElement> getProducts(){
-        WebElement productList = driver.findElement(By.cssSelector("#product_list"));
-        return productList.findElements(By.cssSelector("a.product-name"));
-    }
-
-    public List<WebElement> getStocks(){
-        WebElement productList = driver.findElement(By.cssSelector("#product_list"));
-        return productList.findElements(By.cssSelector(".availability"));
-    }
-
-    public void searchProduct(String searchInput){
-        searchField.sendKeys(searchInput);
-        submitSearch.click();
-    }
 }
