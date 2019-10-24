@@ -17,7 +17,7 @@ public class StepDefAddressExerciseAnswers {
         this.driver = driverManager.driver;
         addressPage = new AddressPage(driver);
     }
-/*//  ANSWER FOR EXERCISE THREE - ASSERTIONS ARE DEEP
+//  ANSWER FOR EXERCISE THREE - ASSERTIONS ARE DEEP
     @And("The user submits his first address")
     public void theUserSubmitsHisFirstAddress() {
         myAccountPage = new MyAccountPage(driver);
@@ -42,48 +42,7 @@ public class StepDefAddressExerciseAnswers {
     public void theNewAddressShouldBeShowOnTheAddressPage() {
         addressPage.validateNewlyAddedAddress();
         addressPage.deleteNewlyAddress();
-        addressPage.validateDeletedAddress();
-        //addressPage.validateNoAddressAccountPage();
-    }*/
-
-    // --- ANSWER FOR FOURTH EXERCISE --- ASSERTION IN THIS LAYER
-    @And("The user submits his first address")
-    public void theUserSubmitsHisFirstAddress() {
-        myAccountPage = new MyAccountPage(driver);
-        myAccountPage.clickToAddFirstAddres();
-
-        Assert.assertEquals("Add new address page is not shown", "New address",
-                addressPage.getAddAddressElement().getText());
-
-        addressPage.fillInAlias("retseT");
-        addressPage.fillInFirstName("Mister");
-        addressPage.fillInLastName("Test");
-        addressPage.fillInCompany("Tester.io");
-        addressPage.fillInVAT("4321");
-        addressPage.fillInAddress("Testlane 23");
-        addressPage.fillInAddressCompl("3A");
-        addressPage.fillInPostalCode("1111 AA");
-        addressPage.fillInCity("Testdam");
-        addressPage.fillInPhoneNumber("0031123456");
-        addressPage.clickSaveButton();
-
-        Assert.assertEquals("Address was not saved succesfully", "Address successfully added!",
-                addressPage.getNewAddressSavedMessageElement().getText());
-    }
-
-    @Then("The new address should be show on the address page")
-    public void theNewAddressShouldBeShowOnTheAddressPage() {
-        Assert.assertTrue("Check if address block is visible", addressPage.getNewlyAddedAddressElement().isDisplayed());
-
-        Assert.assertEquals("Address alias not present", "retseT",
-                addressPage.getNewAddressAliasElement().getText());
-
-        addressPage.deleteNewlyAddress();
-
-        Assert.assertEquals("Address was not deleted succesfully", "Address successfully deleted!",
-                addressPage.getAddressDeletedMessageElement().getText());
-
-        //TODO one check to many?
+        addressPage.validateDeletedAddressMessage();
         //addressPage.validateNoAddressAccountPage();
     }
 }
