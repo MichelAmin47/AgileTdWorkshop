@@ -3,7 +3,7 @@ Feature: Users should see customized page elements
     I would like to see customized page elements
     So that I feel that I'm in my custom shopping experience
 
-@smoke @fast
+@fast
 Scenario:
     Given I am on the Polteq Web Shop
     When I log in

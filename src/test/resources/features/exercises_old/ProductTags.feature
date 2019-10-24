@@ -1,6 +1,6 @@
 Feature: The product tags should be visible on the homepage
 
-  @smoke @ui
+  @ui
   Scenario: The expected product tags are visible on the homepage
     Given   I am on the Polteq Web Shop
     Then the product tags are visible

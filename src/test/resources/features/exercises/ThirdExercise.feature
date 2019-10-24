@@ -1,5 +1,6 @@
 Feature: As a user I want to add my first adress
 
+  @exerciseThree
   Scenario: The user adds his first adress to MyAccount
     Given   The user is on the homepage
     When    The user logs into his MyAccount with "test@tester.com" and "1qazxsw2" as credentials
