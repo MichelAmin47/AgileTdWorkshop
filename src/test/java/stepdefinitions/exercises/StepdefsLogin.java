@@ -33,8 +33,8 @@ public class StepdefsLogin {
         Assert.assertTrue("Check if empty element is visible", driver.findElement(By.className("logo")).isDisplayed());
     }
 
-    @When("User clicks login button")
-    public void userClicksLoginButton() {
+    @When("User clicks sign in button")
+    public void userClicksSignInButton() {
         homePage = new HomePage(driver);
         homePage.clickLogIn();
     }
