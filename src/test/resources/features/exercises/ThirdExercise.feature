@@ -3,7 +3,10 @@ Feature: As a user I want to add my first adress
   @exerciseThree
   Scenario: The user adds his first adress to MyAccount
     Given   The user is on the homepage
-    When    The user logs into his MyAccount with "test@tester.com" and "1qazxsw2" as credentials
+    When    User clicks sign in button
+    And     User fills in email
+    And     User fills in password
+    And     User click login button
     And     clicks add first address
     And     checks for the new address page
     And     fills in Alias "retseT"
