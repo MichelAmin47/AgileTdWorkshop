@@ -38,11 +38,11 @@ public class StepDefAddressExerciseAnswers {
         addressPage.validateNewAddressSaveMessage();
     }
 
-    @Then("The new address should be show on the address page")
+    @Then("The new address should be shown on the address page")
     public void theNewAddressShouldBeShowOnTheAddressPage() {
         addressPage.validateNewlyAddedAddress();
         addressPage.deleteNewlyAddress();
-        addressPage.validateDeletedAddress();
+        addressPage.validateDeletedAddressMessage();
         //addressPage.validateNoAddressAccountPage();
     }*/
 
