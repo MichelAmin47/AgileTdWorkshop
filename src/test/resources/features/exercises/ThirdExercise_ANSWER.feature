@@ -1,6 +1,6 @@
 Feature: As a user I want to add my first address
 
-  @exerciseFour
+  @exerciseThree
   Scenario: The user adds his first address to MyAccount
     Given   The user is on the homepage
     When    The user logs into his MyAccount
