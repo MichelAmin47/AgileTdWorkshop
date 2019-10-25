@@ -61,14 +61,19 @@ public class StepdefsLogin {
         Assert.assertEquals("Account text is not visible", "Your account", myAccountPage.getMyAccountHeader());
     }
 
-
     @When("The user logs into his MyAccount")
     public void theUserLogsIntoHisMyAccount() {
-        // insert code for exercise two
+        homePage = new HomePage(driver);
+        homePage.clickLogIn();
+        authenticationPage.fillInEmail("test@tester.com");
+        authenticationPage.fillInPassword("1qazxsw2");
+        authenticationPage.clickSubmitButton();
     }
 
     @When("The user logs into his MyAccount with \"([^\"]*)\" and \"([^\"]*)\" as credentials")
     public void theUserLogsIntoHisMyAccountWithAndAsCredentials(String email, String password) {
-        // insert code for exercise two
+        homePage = new HomePage(driver);
+        homePage.clickLogIn();
+        authenticationPage.login(email,password);
     }
 }

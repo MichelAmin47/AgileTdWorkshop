@@ -1,4 +1,4 @@
-Feature: As a user I want to add my first address (with correct assertions)
+Feature: As a user I want to add my first address
 
   @exerciseFour
   Scenario: The user adds his first address to MyAccount
