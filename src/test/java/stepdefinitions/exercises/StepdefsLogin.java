@@ -1,9 +1,12 @@
 package stepdefinitions.exercises;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+
+import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +33,8 @@ public class StepdefsLogin {
         // Open the website
         driver.get("https://webshop.mobiletestautomation.nl/");
         driver.manage().window().maximize();
-        Assert.assertTrue("Check if empty element is visible", driver.findElement(By.className("logo")).isDisplayed());
+        Assert.assertTrue("Check if empty element is visible",
+                driver.findElement(By.className("logo")).isDisplayed());
     }
 
     @When("User clicks sign in button")
