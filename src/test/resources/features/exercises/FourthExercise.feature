@@ -6,3 +6,4 @@ Feature: As a user I want to add my first address (with correct assertions)
     When    The user logs into his MyAccount
     And     The user submits his first address
     Then    The new address should be shown on the address page
+    And     The newly added address is deleted
