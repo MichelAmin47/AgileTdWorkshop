@@ -18,7 +18,7 @@ public class StepDefAddressExerciseAnswers {
         this.driver = driverManager.driver;
         addressPage = new AddressPage(driver);
     }
-/*//  ANSWER FOR EXERCISE THREE - ASSERTIONS ARE DEEP
+//  ANSWER FOR EXERCISE THREE - ASSERTIONS ARE DEEP
     @And("The user submits his first address")
     public void theUserSubmitsHisFirstAddress() {
         myAccountPage = new MyAccountPage(driver);
@@ -42,12 +42,16 @@ public class StepDefAddressExerciseAnswers {
     @Then("The new address should be shown on the address page")
     public void theNewAddressShouldBeShowOnTheAddressPage() {
         addressPage.validateNewlyAddedAddress();
+    }
+
+    @Then("The newly added address is deleted")
+    public void theNewlyAddedAddressIsDeleted() {
         addressPage.deleteNewlyAddress();
         addressPage.validateDeletedAddressMessage();
         //addressPage.validateNoAddressAccountPage();
-    }*/
+    }
 
-    // --- ANSWER FOR FOURTH EXERCISE --- ASSERTION IN THIS LAYER
+/*    // --- ANSWER FOR FOURTH EXERCISE --- ASSERTION IN THIS LAYER
     @And("The user submits his first address")
     public void theUserSubmitsHisFirstAddress() {
         myAccountPage = new MyAccountPage(driver);
@@ -78,7 +82,10 @@ public class StepDefAddressExerciseAnswers {
 
         Assert.assertEquals("Address alias not present", "retseT",
                 addressPage.getNewAddressAliasElement().getText());
+    }
 
+    @Then("The newly added address is deleted")
+    public void theNewlyAddedAddressIsDeleted() {
         addressPage.deleteNewlyAddress();
 
         Assert.assertEquals("Address was not deleted succesfully", "Address successfully deleted!",
@@ -86,5 +93,5 @@ public class StepDefAddressExerciseAnswers {
 
         //TODO one check to many?
         //addressPage.validateNoAddressAccountPage();
-    }
+    }*/
 }
