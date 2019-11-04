@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,9 +39,25 @@ public class AuthenticationPage{
     }
 
     public void login(String email, String password) {
-        emailTextfield.sendKeys(email);
-        passwordTextfield.sendKeys(password);
+        driver.findElement(By.cssSelector("input[type='email']")).sendKeys(email);
+        driver.findElement(By.cssSelector("input[type='password']")).sendKeys(password);
         loginButton.click();
+    }
+
+    public void checkNoAdminConsole() {
+        
+    }
+
+    public void checkAdminConsole() {
+    }
+
+    public void checkBAConsole() {
+    }
+
+    public void noEntry() {
+    }
+
+    public void explicitWarning() {
     }
 }
 
