@@ -61,16 +61,23 @@ public class StepdefsLogin {
     @Then("MyAccount elements visible")
     @And("The user should be taken to his Account page")
     public void myaccountElementsVisible() {
-        // Exercise 2 code here please
+        myAccountPage = new MyAccountPage(driver);
+        Assert.assertEquals("Account text is not visible", "Your account", myAccountPage.getMyAccountHeader());
     }
 
     @When("The user logs into his MyAccount")
     public void theUserLogsIntoHisMyAccount() {
-        // Exercise 2 code here please
+        homePage = new HomePage(driver);
+        homePage.clickLogIn();
+        authenticationPage.fillInEmail("test@tester.com");
+        authenticationPage.fillInPassword("1qazxsw2");
+        authenticationPage.clickSubmitButton();
     }
 
     @When("The user logs into his MyAccount with \"([^\"]*)\" and \"([^\"]*)\" as credentials")
     public void theUserLogsIntoHisMyAccountWithAndAsCredentials(String email, String password) {
-        // Exercise 2 code here please
+        homePage = new HomePage(driver);
+        homePage.clickLogIn();
+        authenticationPage.login(email,password);
     }
 }
