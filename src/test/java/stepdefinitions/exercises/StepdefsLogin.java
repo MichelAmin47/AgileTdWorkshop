@@ -45,7 +45,7 @@ public class StepdefsLogin {
 
     @And("User fills in email")
     public void userFillsInEmail() {
-        authenticationPage.fillInEmail("test@tester.com");
+        authenticationPage.fillInEmail("testerino@tester.com");
     }
 
     @And("User fills in password")
@@ -69,7 +69,7 @@ public class StepdefsLogin {
     public void theUserLogsIntoHisMyAccount() {
         homePage = new HomePage(driver);
         homePage.clickLogIn();
-        authenticationPage.fillInEmail("test@tester.com");
+        authenticationPage.fillInEmail("testerino@tester.com");
         authenticationPage.fillInPassword("1qazxsw2");
         authenticationPage.clickSubmitButton();
     }
