@@ -5,4 +5,4 @@ jobs:
       - image: circleci/openjdk:8u232-browsers
     steps:
       - checkout
-      - run: -Dtest=RunCukesSmokeTest test -f pom.xml
+      - run: mvn -Dtest=RunCukesSmokeTest test -f pom.xml
