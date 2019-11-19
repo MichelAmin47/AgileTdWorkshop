@@ -2,7 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/openjdk:8u232-browsers
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: mvn -Dtest=RunCukesFourthExerciseTest test -f pom.xml
+      - store_test_results:
+          path: target/report
