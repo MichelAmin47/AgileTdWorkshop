@@ -5,4 +5,5 @@ jobs:
       - image: circleci/openjdk:8u232-browsers
     steps:
       - checkout
+      - run: mvn package
       - run: echo "A first hello"
